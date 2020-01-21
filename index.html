@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -10,15 +10,48 @@
 </head>
 <body>
     <!-- <h1> that has highscore hyperlink on left and timer on right, code quiz in the middle larger. Look into span tags to see if they need anything else please -->
-    <header class="header">
-        <a href="highscore.html">Highcores</a>
-        <h1 class="codeQuiz">Code Quiz</h1>
-        <div class="timer">Timer:<span class="countdown">0</span></div>
-    </header>
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <a class="myLink col-4" href="highscore.html">Highcores</a>
+                    <h1 class="codeQuiz col-4">Code Quiz</h1>
+                    <div class="timer col-4">Timer:<span class="countdown">0</span></div>
+                </div>
+            </div>
+        </header>
     <!-- have title on an h2 and instrcutions with a start button below it, centered -->
-    <div class="theGame">
-        <h2 class="information">Javascript Coding Quiz</h2>
-        <p class="showMe">Welcome to the Javascript Coding Quiz. When you are ready to play, click start. You will be shown a series of questions with multiple choice answers. Click on the one that you think is correct. You will be informed if you are correct or not. Be careful, for every wrong answer you have 10 seconds with be removed. You only have sixty seconds to try an answer all the questions. When you have answered them all, or time has run out, you will see your score and have the change to put your initials into our Highscore Hall of Fame.</p>
+    <div class="container theGame">
+        <div class="row">
+            <div class="col-3">
+
+            </div>
+            <h2 class="information col-6">Javascript Coding Quiz</h2>
+            <div class="col-3">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+
+            </div>
+            <p class="showMe col-8">
+                Welcome to the Javascript Coding Quiz. When you are ready to play, click start. You will be shown a series of questions with multiple choice answers. Click on the one that you think is correct. You will be informed if you are correct or not. Be careful, for every wrong answer you have 10 seconds with be removed. You only have sixty seconds to try an answer all the questions. When you have answered them all, or time has run out, you will see your score and have the change to put your initials into our Highscore Hall of Fame.
+            </p>
+            <div class="col-2">
+
+            </div>
+        </div>
+        <div class="row startButton">
+            <div class="col-5">
+
+            </div>
+            <div class="col-2">
+                <button>Start Game</button>
+            </div>
+            <div class="col-5">
+                
+            </div>
+        </div>
     </div>
     <!-- change h2 to question 2 with four multiole choice answers -->
     <!-- show if correct or not quickly before changeing to next questions -->
