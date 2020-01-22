@@ -12,8 +12,21 @@
 // array of questions longer than 5
 // array with answers
 // use brainstorm from letty
+
+let q1 = {
+    qText = "What is JavaScript?",
+    answers = [
+        "A font style.",
+        "A delicious snack.",
+        "It makes your website do things.",
+        "It makes your website look pretty",
+    ],
+    
+}
+
+
 // function for random questiomn and answers
-// 
+// can you make answers random among their own array?
 
 // event listener for start
 
