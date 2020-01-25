@@ -11,8 +11,8 @@
 
 // array of questions longer than 5
 // array with answers
-
-let q1 = {
+let quizQuestions = [{
+    q1 = {
     qText = "What is JavaScript?",
     answers = [
         "A font style.",
@@ -22,8 +22,8 @@ let q1 = {
     ],
     //have some way to check if it has been used
     isused = false,
-}
-let q2 = {
+}},
+{q2 = {
     qText = "What is console.log () used for?",
     answers = [
         "Put information into the web console.",
@@ -32,50 +32,52 @@ let q2 = {
         "Refreshes the screen.",
     ],
     isused = false,
-}
-let q3 = {
+}},
+{q3 = {
     qText = "",
     answers = [],
     isused = false,
-}
-let q4 = {
+}},
+{q4 = {
     qText = "",
     answers = [],
     isused = false,
-}
-let q5 = {
+}},
+{q5 = {
     qText = "",
     answers = [],
     isused = false,
-}
-let q6 = {
+}},
+{q6 = {
     qText = "",
     answers = [],
     isused = false,
-}
-let q7 = {
+}},
+{q7 = {
     qText = "",
     answers = [],
     isused = false,
-}
-let q8 = {
+}},
+{q8 = {
     qText = "",
     answers = [],
     isused = false,
-}
-let q9 = {
+}},
+{q9 = {
     qText = "",
     answers = [],
     isused = false,
-}
-let q10 = {
+}},
+{q10 = {
     qText = "",
     answers = [],
     isused = false,
-}
+}},];
 
 
 // function for random questiomn and answers
+
+
 // can you make answers random among their own array?
 
 // event listener for start
