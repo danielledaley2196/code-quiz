@@ -11,7 +11,6 @@
 
 // array of questions longer than 5
 // array with answers
-// use brainstorm from letty
 
 let q1 = {
     qText = "What is JavaScript?",
@@ -21,7 +20,58 @@ let q1 = {
         "It makes your website do things.",
         "It makes your website look pretty",
     ],
-    
+    //have some way to check if it has been used
+    isused = false,
+}
+let q2 = {
+    qText = "What is console.log () used for?",
+    answers = [
+        "Put information into the web console.",
+        "Runs a function.",
+        "Returns the data with an alert box.",
+        "Refreshes the screen.",
+    ],
+    isused = false,
+}
+let q3 = {
+    qText = "",
+    answers = [],
+    isused = false,
+}
+let q4 = {
+    qText = "",
+    answers = [],
+    isused = false,
+}
+let q5 = {
+    qText = "",
+    answers = [],
+    isused = false,
+}
+let q6 = {
+    qText = "",
+    answers = [],
+    isused = false,
+}
+let q7 = {
+    qText = "",
+    answers = [],
+    isused = false,
+}
+let q8 = {
+    qText = "",
+    answers = [],
+    isused = false,
+}
+let q9 = {
+    qText = "",
+    answers = [],
+    isused = false,
+}
+let q10 = {
+    qText = "",
+    answers = [],
+    isused = false,
 }
 
 
