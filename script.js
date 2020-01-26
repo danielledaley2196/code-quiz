@@ -11,140 +11,145 @@
 
 // array of questions longer than 5
 // array with answers
+$(document).ready(function() {
 let quizQuestions = [{
-    q1 = {
-    qText = "What is JavaScript?",
-    answers = [
+    qText: "What is JavaScript?",
+    answers: [
         "A font style.",
         "A delicious snack.",
         "It makes your website do things.",
         "It makes your website look pretty",
     ],
     //have some way to check if it has been used
-    isused = false,
-    correct = "It makes your website do things.",
-}},
-{q2 = {
-    qText = "What is console.log () used for?",
-    answers = [
+    isused: false,
+    correct: "It makes your website do things.",
+},
+ {
+    qText: "What is console.log () used for?",
+    answers: [
         "Puts information into the web console.",
         "Runs a function.",
         "Returns the data with an alert box.",
         "Refreshes the screen.",
     ],
-    isused = false,
-    correct = "Puts information into the web console.",
-}},
-{q3 = {
-    qText = "q3",
-    answers = [
+    isused: false,
+    correct: "Puts information into the web console.",
+},
+ {
+    qText: "q3",
+    answers: [
         "1",
         "2",
         "3",
         "4",
     ],
-    isused = false,
-    correct = "4",
-}},
-{q4 = {
-    qText = "q4",
-    answers = [
+    isused: false,
+    correct: "4",
+},
+{
+    qText: "q4",
+    answers: [
         "1",
         "2",
         "3",
         "4",
     ],
-    isused = false,
-    correct = "2",
-}},
-{q5 = {
-    qText = "q5",
-    answers = [
+    isused: false,
+    correct: "2",
+},
+{
+    qText: "q5",
+    answers: [
         "1",
         "2",
         "3",
         "4",
     ],
-    isused = false,
-    correct = "3"
-}},
-{q6 = {
-    qText = "q6",
-    answers = [
+    isused: false,
+    correct: "3"
+},
+{
+    qText: "q6",
+    answers: [
         "1",
         "2",
         "3",
         "4",
     ],
-    isused = false,
-    correct = "1",
-}},
-{q7 = {
-    qText = "q7",
-    answers = [
+    isused: false,
+    correct: "1",
+},
+{
+    qText: "q7",
+    answers: [
         "1",
         "2",
         "3",
         "4",
 ],
-    isused = false,
-    correct = "3"
-}},
-{q8 = {
-    qText = "q8",
-    answers = [
+    isused: false,
+    correct: "3"
+},
+{
+    qText: "q8",
+    answers: [
         "1",
         "2",
         "3",
         "4",
     ],
-    isused = false,
-    correct = "2",
-}},
-{q9 = {
-    qText = "q9",
-    answers = [
+    isused: false,
+    correct: "2",
+},
+{
+    qText: "q9",
+    answers: [
         "1",
         "2",
         "3",
         "4",
     ],
-    isused = false,
-    correct = "3",
-}},
-{q10 = {
-    qText = "q10",
-    answers = [
+    isused: false,
+    correct: "3",
+},
+{
+    qText: "q10",
+    answers: [
         "1",
         "2",
         "3",
         "4",
     ],
-    isused = false,
-    correct = "3",
-}},];
+    isused: false,
+    correct: "3",
+},];
 
 
 // function for random questiomn and answers
-function showQuestion (questions, ) {
+function showQuestion () {
+    //console.log("hello");
     let question = [];
     for (i = 0; i < 10; i++) {
-        question.push(questions[i].qText);
-        questions[i].answers.sort(function(){
+        let thisQuestion = quizQuestions[i].qText;
+        //console.log(typeof quizQuestions);
+       // console.log(quizQuestions[1].qText);
+        question.push(thisQuestion);
+        //console.log(thisQuestion);
+        quizQuestions[i].answers.sort(function(){
             return(0.5-Math.random())
         });
         }
-    console.log(question) 
+    //console.log(question) 
 
     let askMe = Math.floor(Math.random() * question.length)
-    if (isused === false) {
+    if (quizQuestions[i].isused === false) {
         //tie to information header
         $(".information").innerText(askMe);
         isused = true;
-        $(".showMe").replace(showMe.innerText) = $(<ul></ul>).append.$(<li></li>).answers;
+        $(".showMe").replace(showMe.innerText) = $("<ul>").append.$("<li>").answers;
     }
 }
-
+$("#startMe").on("click", showQuestion);
 
 // can you make answers random among their own array?
 
@@ -155,3 +160,4 @@ function showQuestion (questions, ) {
 //event listener for input
 
 // function for randomquestion
+});
