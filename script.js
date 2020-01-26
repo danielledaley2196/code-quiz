@@ -22,60 +22,128 @@ let quizQuestions = [{
     ],
     //have some way to check if it has been used
     isused = false,
+    correct = "It makes your website do things.",
 }},
 {q2 = {
     qText = "What is console.log () used for?",
     answers = [
-        "Put information into the web console.",
+        "Puts information into the web console.",
         "Runs a function.",
         "Returns the data with an alert box.",
         "Refreshes the screen.",
     ],
     isused = false,
+    correct = "Puts information into the web console.",
 }},
 {q3 = {
-    qText = "",
-    answers = [],
+    qText = "q3",
+    answers = [
+        "1",
+        "2",
+        "3",
+        "4",
+    ],
     isused = false,
+    correct = "4",
 }},
 {q4 = {
-    qText = "",
-    answers = [],
+    qText = "q4",
+    answers = [
+        "1",
+        "2",
+        "3",
+        "4",
+    ],
     isused = false,
+    correct = "2",
 }},
 {q5 = {
-    qText = "",
-    answers = [],
+    qText = "q5",
+    answers = [
+        "1",
+        "2",
+        "3",
+        "4",
+    ],
     isused = false,
+    correct = "3"
 }},
 {q6 = {
-    qText = "",
-    answers = [],
+    qText = "q6",
+    answers = [
+        "1",
+        "2",
+        "3",
+        "4",
+    ],
     isused = false,
+    correct = "1",
 }},
 {q7 = {
-    qText = "",
-    answers = [],
+    qText = "q7",
+    answers = [
+        "1",
+        "2",
+        "3",
+        "4",
+],
     isused = false,
+    correct = "3"
 }},
 {q8 = {
-    qText = "",
-    answers = [],
+    qText = "q8",
+    answers = [
+        "1",
+        "2",
+        "3",
+        "4",
+    ],
     isused = false,
+    correct = "2",
 }},
 {q9 = {
-    qText = "",
-    answers = [],
+    qText = "q9",
+    answers = [
+        "1",
+        "2",
+        "3",
+        "4",
+    ],
     isused = false,
+    correct = "3",
 }},
 {q10 = {
-    qText = "",
-    answers = [],
+    qText = "q10",
+    answers = [
+        "1",
+        "2",
+        "3",
+        "4",
+    ],
     isused = false,
+    correct = "3",
 }},];
 
 
 // function for random questiomn and answers
+function showQuestion (questions, ) {
+    let question = [];
+    for (i = 0; i < 10; i++) {
+        question.push(questions[i].qText);
+        questions[i].answers.sort(function(){
+            return(0.5-Math.random())
+        });
+        }
+    console.log(question) 
+
+    let askMe = Math.floor(Math.random() * question.length)
+    if (isused === false) {
+        //tie to information header
+        $(".information").innerText(askMe);
+        isused = true;
+        $(".showMe").replace(showMe.innerText) = $(<ul></ul>).append.$(<li></li>).answers;
+    }
+}
 
 
 // can you make answers random among their own array?
