@@ -151,7 +151,30 @@ function showQuestion () {
         }
     }
     }
+$("#startMe").on("click", function(){
+
+    let seconds = 75;
+    let setTimer = setInterval(timer, 1000);
+    
+    function timer() {
+        seconds--;
+        if (seconds === -1) {
+            clearInterval(setTimer);
+            $("button").on("click", function () {
+                $(this).show();
+            })
+            return;
+        }
+        $(".countdown").text(seconds);
+    }
+});
+    
+
+//clearInterval (setTimer);
 $("#startMe").on("click", showQuestion);
+$("button").on("click", function () {
+    $(this).hide();
+});
 
 // can you make answers random among their own array?
 
