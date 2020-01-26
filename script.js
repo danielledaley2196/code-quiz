@@ -38,90 +38,90 @@ let quizQuestions = [{
  {
     qText: "q3",
     answers: [
-        "1",
-        "2",
-        "3",
-        "4",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
     ],
     isused: false,
-    correct: "4",
+    correct: "4q",
 },
 {
     qText: "q4",
     answers: [
-        "1",
-        "2",
-        "3",
-        "4",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
     ],
     isused: false,
-    correct: "2",
+    correct: "2q",
 },
 {
     qText: "q5",
     answers: [
-        "1",
-        "2",
-        "3",
-        "4",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
     ],
     isused: false,
-    correct: "3"
+    correct: "q3"
 },
 {
     qText: "q6",
     answers: [
-        "1",
-        "2",
-        "3",
-        "4",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
     ],
     isused: false,
-    correct: "1",
+    correct: "q1",
 },
 {
     qText: "q7",
     answers: [
-        "1",
-        "2",
-        "3",
-        "4",
+        "q1",
+        "q2",
+        "3q",
+        "4q",
 ],
     isused: false,
-    correct: "3"
+    correct: "q3"
 },
 {
     qText: "q8",
     answers: [
-        "1",
-        "2",
-        "3",
-        "4",
+        "1q",
+        "q2",
+        "q3",
+        "q4",
     ],
     isused: false,
-    correct: "2",
+    correct: "q2",
 },
 {
     qText: "q9",
     answers: [
-        "1",
-        "2",
-        "3",
-        "4",
+        "1q",
+        "2q",
+        "q3",
+        "q4",
     ],
     isused: false,
-    correct: "3",
+    correct: "3q",
 },
 {
     qText: "q10",
     answers: [
-        "1",
-        "2",
-        "3",
-        "4",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
     ],
     isused: false,
-    correct: "3",
+    correct: "q3",
 },];
 
 
@@ -132,23 +132,25 @@ function showQuestion () {
     for (i = 0; i < 10; i++) {
         let thisQuestion = quizQuestions[i].qText;
         //console.log(typeof quizQuestions);
-       // console.log(quizQuestions[1].qText);
+       //console.log(quizQuestions[i].qText);
         question.push(thisQuestion);
         //console.log(thisQuestion);
         quizQuestions[i].answers.sort(function(){
             return(0.5-Math.random())
         });
+        //console.log(question); 
+        
+        let askMe = question[Math.floor(Math.random() * question.length)];
+        console.log(askMe);
+        if (!quizQuestions[i].isused) {
+            //tie to information header
+             $(".information").replaceWith(".information".innerText).text(askMe);
+            // use for each loop here for this and the one below
+            isused = true;
+            $(".showMe").replaceWith(".showMe".innerText) == $("<ul>").append("<li>").text(quizQuestions[i].answers);
         }
-    //console.log(question) 
-
-    let askMe = Math.floor(Math.random() * question.length)
-    if (quizQuestions[i].isused === false) {
-        //tie to information header
-        $(".information").innerText(askMe);
-        isused = true;
-        $(".showMe").replace(showMe.innerText) = $("<ul>").append.$("<li>").answers;
     }
-}
+    }
 $("#startMe").on("click", showQuestion);
 
 // can you make answers random among their own array?
