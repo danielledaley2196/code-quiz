@@ -86,8 +86,10 @@ function showQuestion () {
                 else {
                     
                      $("#showMe").text("Incorrect!");
-                    //subtract 10 seconds
-                    showQuestion();
+                
+                   
+                        showQuestion();
+                    
                 }
             });
         }
@@ -109,7 +111,7 @@ $("#startMe").on("click", function(){
             return;
         }
         else {
-            
+
         }
         $(".countdown").text(seconds);
     }
@@ -119,3 +121,21 @@ $("#startMe").on("click", function(){
 $("#startMe").on("click", showQuestion);
 
 });
+function addHighScore (num, init) {
+    let score = localStorage.getItem("hiScoreList");
+    if (num < 0) {
+        num = 0;
+    }
+    if (scores === null){
+        scores = [];
+      }
+      else {
+        scores = JSON.parse(scores);
+      }
+
+      scores.unshift({
+        score: num, 
+        name: init
+      });
+      localStorage.setItem("hiScoreList", JSON.stringify(scores));
+}
