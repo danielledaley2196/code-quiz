@@ -129,7 +129,7 @@ let quizQuestions = [{
 function showQuestion () {
     //console.log("hello");
    // let question = [];
-    for (i = 0; i < 1; i++) {
+    for (let i = 0; i < 1; i++) {
         let thisQuestion = Math.floor(Math.random() * quizQuestions.length);
 
         //console.log(typeof quizQuestions);
@@ -161,8 +161,20 @@ function showQuestion () {
                 let thisThing = $("<li>");
                 thisThing.text(quizQuestions[thisQuestion].answers[j]);
                 $("#showMe").append(thisThing);
+                $("li").remove(".howTo");
 
             }
+            $("li").on("click", function() {
+                if (quizQuestions[thisQuestion].correct === $("li")) {
+                    $("#showMe").text("Correct!").append("<li>");
+                    showQuestion();
+                }
+                else {
+                    $("#showMe").text("Incorrect!").append("<li>");
+                    //subtract 10 seconds
+                    showQuestion();
+                }
+            });
 
             //$(".showMe").append($("<li>").text(quizQuestions[thisQuestion].answers[0]));
             //$(".showMe").append($("<li>").text(quizQuestions[thisQuestion].answers[1]));
@@ -186,7 +198,7 @@ $("#startMe").on("click", function(){
     
     function timer() {
         seconds--;
-        if (seconds === 0) {
+        if (seconds < 0) {
             clearInterval(setTimer);
             $("button").on("click", function () {
                 $(this).show();
