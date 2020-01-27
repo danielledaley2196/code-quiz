@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-let quizQuestions = [{
+const quizQuestions = [{
     qText: "What is JavaScript?",
     answers: [
         "A font style.",
@@ -9,7 +9,7 @@ let quizQuestions = [{
         "It makes your website look pretty"
     ],
     isused: false,
-    correct: "It makes your website do things.",
+    correct: 0,
 },
  {
     qText: "What is console.log () used for?",
@@ -20,96 +20,42 @@ let quizQuestions = [{
         "Refreshes the screen."
     ],
     isused: false,
-    correct: "Puts information into the web console.",
+    correct: 0,
 },
  {
-    qText: "q3",
+    qText: "How do you create a function in JavaScript?",
     answers: [
-        "a1",
-        "a2",
-        "a3",
-        "a4"
+        "function myFunction()",
+        "function = myFunction()",
+        "the function()",
+        "function:myFunction()"
     ],
+    correct: 0,
     isused: false,
-    correct: "a4",
 },
 {
-    qText: "q4",
+    qText: "How do you round the number 7.25, to the nearest integer?",
     answers: [
-        "a1",
-        "a2",
-        "a3",
-        "a4"
+        "rnd(7.25)",
+        "Math.round(7.25)",
+        "round(7.25)",
+        "Math.rnd(7.25)"
     ],
     isused: false,
-    correct: "a2",
+    correct: 1,
 },
 {
-    qText: "q5",
+    qText: "How does a FOR loop start?",
     answers: [
-        "a1",
-        "a2",
-        "a3",
-        "a4"
+        "for (i = 0; i <= 5; i++)  ",
+        "for (i = 0; i <= 5)",
+        "for i = 1 to 5",
+        "for (i <= 5; i++)"
     ],
     isused: false,
-    correct: "a3"
+    correct: 1,
 },
-{
-    qText: "q6",
-    answers: [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
-    ],
-    isused: false,
-    correct: "q1",
-},
-{
-    qText: "q7",
-    answers: [
-        "a1",
-        "a2",
-        "a3",
-        "a4"
-],
-    isused: false,
-    correct: "a3"
-},
-{
-    qText: "q8",
-    answers: [
-        "a1",
-        "a2",
-        "a3",
-        "a4"
-    ],
-    isused: false,
-    correct: "a2",
-},
-{
-    qText: "a9",
-    answers: [
-        "a1",
-        "a2",
-        "a3",
-        "a4"
-    ],
-    isused: false,
-    correct: "a3",
-},
-{
-    qText: "q10",
-    answers: [
-        "a1",
-        "a2",
-        "a3",
-        "a4"
-    ],
-    isused: false,
-    correct: "a3",
-},];
+];
 
 
 
@@ -126,14 +72,14 @@ function showQuestion () {
             
             
             for (let j = 0; j < 4; j++){
-                let thisThing = $("<li>").addClass("myCheck btn btn-outline-success");
+                let thisThing = $("<li>").addClass("target btn btn-outline-success");
                 thisThing.text(quizQuestions[thisQuestion].answers[j]);
                 $("#showMe").append(thisThing).append("<br />");
                 $("li").remove(".howTo");
-
+                
             }
             $("li").on("click", function() {
-                if (this === quizQuestions[thisQuestion].correct) {
+                if ($(this).is(quizQuestions[thisQuestion].correct)) {
                     $("#showMe").text("Correct!");
                     showQuestion();
                 }
@@ -161,6 +107,9 @@ $("#startMe").on("click", function(){
                 $(this).show();
             })
             return;
+        }
+        else {
+            
         }
         $(".countdown").text(seconds);
     }
