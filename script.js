@@ -85,10 +85,8 @@ function showQuestion () {
                 }
                 else {
                     
-                     $("#showMe").text("Incorrect!");
-                
-                   
-                        showQuestion();
+                    $("#showMe").text("Incorrect!");
+                  showQuestion();
                     
                 }
             });
