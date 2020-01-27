@@ -18,7 +18,7 @@ let quizQuestions = [{
         "A font style.",
         "A delicious snack.",
         "It makes your website do things.",
-        "It makes your website look pretty",
+        "It makes your website look pretty"
     ],
     //have some way to check if it has been used
     isused: false,
@@ -30,7 +30,7 @@ let quizQuestions = [{
         "Puts information into the web console.",
         "Runs a function.",
         "Returns the data with an alert box.",
-        "Refreshes the screen.",
+        "Refreshes the screen."
     ],
     isused: false,
     correct: "Puts information into the web console.",
@@ -38,35 +38,35 @@ let quizQuestions = [{
  {
     qText: "q3",
     answers: [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
+        "a1",
+        "a2",
+        "a3",
+        "a4"
     ],
     isused: false,
-    correct: "4q",
+    correct: "a4",
 },
 {
     qText: "q4",
     answers: [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
+        "a1",
+        "a2",
+        "a3",
+        "a4"
     ],
     isused: false,
-    correct: "2q",
+    correct: "a2",
 },
 {
     qText: "q5",
     answers: [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
+        "a1",
+        "a2",
+        "a3",
+        "a4"
     ],
     isused: false,
-    correct: "q3"
+    correct: "a3"
 },
 {
     qText: "q6",
@@ -82,83 +82,111 @@ let quizQuestions = [{
 {
     qText: "q7",
     answers: [
-        "q1",
-        "q2",
-        "3q",
-        "4q",
+        "a1",
+        "a2",
+        "a3",
+        "a4"
 ],
     isused: false,
-    correct: "q3"
+    correct: "a3"
 },
 {
     qText: "q8",
     answers: [
-        "1q",
-        "q2",
-        "q3",
-        "q4",
+        "a1",
+        "a2",
+        "a3",
+        "a4"
     ],
     isused: false,
-    correct: "q2",
+    correct: "a2",
 },
 {
-    qText: "q9",
+    qText: "a9",
     answers: [
-        "1q",
-        "2q",
-        "q3",
-        "q4",
+        "a1",
+        "a2",
+        "a3",
+        "a4"
     ],
     isused: false,
-    correct: "3q",
+    correct: "a3",
 },
 {
     qText: "q10",
     answers: [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
+        "a1",
+        "a2",
+        "a3",
+        "a4"
     ],
     isused: false,
-    correct: "q3",
+    correct: "a3",
 },];
 
 
 // function for random questiomn and answers
 function showQuestion () {
     //console.log("hello");
-    let question = [];
-    for (i = 0; i < 10; i++) {
-        let thisQuestion = quizQuestions[i].qText;
+   // let question = [];
+    for (i = 0; i < 1; i++) {
+        let thisQuestion = Math.floor(Math.random() * quizQuestions.length);
+
         //console.log(typeof quizQuestions);
        //console.log(quizQuestions[i].qText);
-        question.push(thisQuestion);
+        //question.push(thisQuestion);
         //console.log(thisQuestion);
-        quizQuestions[i].answers.sort(function(){
-            return(0.5-Math.random())
-        });
+        //  quizQuestions[i].answers.sort(function(){
+        //      return(0.5-Math.random())
+        // });
         //console.log(question); 
         
-        let askMe = question[Math.floor(Math.random() * question.length)];
-        console.log(askMe);
-        if (!quizQuestions[i].isused) {
+        //let askMe = question[Math.floor(Math.random() * question.length)];
+        //console.log(askMe);
+        //console.log(`isused: ${quizQuestions[i].isused}`);
+       // console.log(typeof quizQuestions[i].isused);
+        if (quizQuestions[thisQuestion].isused === false) {
+            //console.log(quizQuestions[thisQuestion].answers[1]);
             //tie to information header
-             $(".information").replaceWith(".information".innerText).text(askMe);
+             $(".information").text(quizQuestions[thisQuestion].qText);
             // use for each loop here for this and the one below
-            isused = true;
-            $(".showMe").replaceWith(".showMe".innerText) == $("<ul>").append("<li>").text(quizQuestions[i].answers);
+            thisQuestion.isused = true;
+            
+            // console.log(quizQuestions[thisQuestion].answers[0]);
+            // console.log(quizQuestions[thisQuestion].answers[1]);
+            // console.log(quizQuestions[thisQuestion].answers[2]);
+            // console.log(quizQuestions[thisQuestion].answers[3]);
+            // console.log($("#showMe"));
+            for (let j = 0; j < 4; j++){
+                let thisThing = $("<li>");
+                thisThing.text(quizQuestions[thisQuestion].answers[j]);
+                $("#showMe").append(thisThing);
+
+            }
+
+            //$(".showMe").append($("<li>").text(quizQuestions[thisQuestion].answers[0]));
+            //$(".showMe").append($("<li>").text(quizQuestions[thisQuestion].answers[1]));
+            //$(".showMe").append($("<li>").text(quizQuestions[thisQuestion].answers[2]));
+            //$(".showMe").append($("<li>").text(quizQuestions[thisQuestion].answers[3]));
+            // quizQuestions[i].answers.forEach(function (e) {
+            //     $(".showMe").append("<li>").text(e);
+            // });
+            // for (let j = 0; j < 4; j++) { 
+                 
+            //     $(".showMe").append("<li>").text(quizQuestions[i].answers[j]);
+            // }
         }
     }
     }
 $("#startMe").on("click", function(){
+    $(this).hide();
 
     let seconds = 75;
     let setTimer = setInterval(timer, 1000);
     
     function timer() {
         seconds--;
-        if (seconds === -1) {
+        if (seconds === 0) {
             clearInterval(setTimer);
             $("button").on("click", function () {
                 $(this).show();
@@ -168,13 +196,10 @@ $("#startMe").on("click", function(){
         $(".countdown").text(seconds);
     }
 });
-    
+
 
 //clearInterval (setTimer);
 $("#startMe").on("click", showQuestion);
-$("button").on("click", function () {
-    $(this).hide();
-});
 
 // can you make answers random among their own array?
 
