@@ -126,15 +126,15 @@ function showQuestion () {
             
             
             for (let j = 0; j < 4; j++){
-                let thisThing = $("<li>");
+                let thisThing = $("<li>").addClass("myCheck btn btn-outline-success");
                 thisThing.text(quizQuestions[thisQuestion].answers[j]);
-                $("#showMe").append(thisThing);
+                $("#showMe").append(thisThing).append("<br />");
                 $("li").remove(".howTo");
 
             }
             $("li").on("click", function() {
-                if (quizQuestions[thisQuestion].correct === ("")) {
-                    $("#showMe").text("Correct!").append("<li>");
+                if (this === quizQuestions[thisQuestion].correct) {
+                    $("#showMe").text("Correct!");
                     showQuestion();
                 }
                 else {
